@@ -1,11 +1,13 @@
 <h1>PROJET JEE -SPRING-ANGULAR-SPRING SECURITY-JWT</h1> 
-<h2>Introduction<h2>
+<h2>Introduction</h2>
 
-<p>Le projet de gestion bancaire vise à développer une application 
+<p>
+Le projet de gestion bancaire vise à développer une application 
 complète permettant la gestion efficace des comptes bancaires.
 Chaque compte est associé à un client et peut être sujet à diverses 
 opérations telles que le débit et le crédit. Le système prend en charge
-deux types de comptes : les comptes courants et les comptes épargnes.</p>
+deux types de comptes : les comptes courants et les comptes épargnes.
+</p>
 
 <h2>Architecture de l'application</h2>
 <img src="captures/architectureebanking.PNG">
