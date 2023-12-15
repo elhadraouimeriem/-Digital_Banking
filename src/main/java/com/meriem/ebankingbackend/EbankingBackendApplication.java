@@ -22,6 +22,7 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 @SpringBootApplication
+
 public class EbankingBackendApplication {
 
 	public static void main(String[] args) {
@@ -38,8 +39,8 @@ public class EbankingBackendApplication {
 						customer.setName(name);
 						customer.setEmail(name+"@gmail?com");
 					   bankAccountService.saveCustomer(customer);
-					}
-			);
+
+					});
 			bankAccountService.listCustomers().forEach(customer -> {
 				try {
 					bankAccountService.saveCurrentBankAccount(Math.random()*90000,9000,customer.getId());
@@ -53,7 +54,7 @@ public class EbankingBackendApplication {
 				} catch (CustomerNotFoundException e) {
 					e.printStackTrace();
 				} catch (BankAccountNotFoundException | BalanceNotSufficientException e) {
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 
 			});
