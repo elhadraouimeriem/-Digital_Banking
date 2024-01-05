@@ -1,27 +1,61 @@
 package com.meriem.ebankingbackend.web;
 
+import com.meriem.ebankingbackend.dtos.CustomersDTO;
 import com.meriem.ebankingbackend.entities.Customer;
+import com.meriem.ebankingbackend.exceptions.CustomerNotFoundException;
 import com.meriem.ebankingbackend.services.BankAccountService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @AllArgsConstructor
 @NoArgsConstructor
 @Slf4j
-
 public class CustomerRestController {
     @Autowired
     private BankAccountService bankAccountService;
     @GetMapping("/customers")
-    public List<Customer> customers(){
+    @PreAuthorize("hasAnyAuthority('SCOPE_USER')")
+    public List<CustomersDTO> customers(){
         return bankAccountService.listCustomers();
+    }
+    @GetMapping("/customers/search")
+    @PreAuthorize("hasAnyAuthority('SCOPE_USER')")
+
+    public List<CustomersDTO> searchCustomers(@RequestParam(name = "keyword",defaultValue = "") String keyword){
+        return bankAccountService.searchCustomers("%"+keyword+"%");
+    }
+    @GetMapping("/customers/{id}")
+    @PreAuthorize("hasAnyAuthority('SCOPE_USER')")
+
+    public CustomersDTO getCustomer(@PathVariable(name = "id") Long customerId) throws CustomerNotFoundException {
+    return bankAccountService.getCustomer(customerId);
+    }
+    @PostMapping("/customers")
+    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+
+    public CustomersDTO saveCustomer(@RequestBody CustomersDTO customersDTO){
+    return bankAccountService.saveCustomer(customersDTO);
+
+    }
+    @PutMapping("/customers/{customerId}")
+    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+
+    public CustomersDTO updateCustomer(@PathVariable Long customerId,@RequestBody CustomersDTO customersDTO){
+        customersDTO.setId(customerId);
+        return bankAccountService.updateCustomer(customersDTO);
+    }
+    @DeleteMapping("/customers/{customerId}")
+    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+
+    public void deleteCustomer(@PathVariable Long customerId){
+        bankAccountService.deleteCustomer(customerId);
     }
 }

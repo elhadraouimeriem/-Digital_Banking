@@ -32,7 +32,7 @@ public class BankService {
             }
             System.out.println("================= Operations ======================");
             bankAccount.getAccountOperations().forEach(op -> {
-                System.out.println(op.getType() + "\t" + op.getOperatinDate() + "\t" + op.getAmount());
+                System.out.println(op.getType() + "\t" + op.getOperationDate() + "\t" + op.getAmount());
             });
         }
     }
