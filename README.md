@@ -75,7 +75,6 @@ avec la base de données.Des tests ont été effectués pour valider le bon fonc
 4. Afficher les Opération d'un compte
    <img src="captures/Operations.PNG">
 
-
 ## Tests et Documentation
 # Swagger
 Swagger a été intégré pour la documentation automatique des API REST. Cet outil génère une documentation interactive basée sur les annotations dans le code source. Grâce à Swagger, les développeurs peuvent explorer et comprendre facilement les endpoints disponibles, les paramètres requis, et les réponses attendues, tout en facilitant l'intégration avec d'autres parties du système. stp redonne moi ca en fonction de mon projet et comment j'ai pu les exploiter dans mon projet et utilise on
@@ -123,12 +122,12 @@ agit en tant que serveur de ressources sécurisé.
    <img src="captures/login_apres.PNG">
    <img src="captures/http_client_outil.PNG">
    À chaque fois que l'authentification de base (Basic) est utilisée, lors de l'envoi d'une requête, il est nécessaire d'inclure les informations d'identification (nom d'utilisateur et mot de passe) dans l'en-tête d'autorisation. Ces informations doivent être encodées en Base64.
-        
-    **Consultation des Clients**
+         
+ **Consultation des Clients**
    <img src="captures/http_client_customer.PNG">
          **Consultation du profil**
   <img src="captures/http_client_profile.PNG">
-4. JWT
+5. JWT
    Avec l'approche HTTP Basic, il est nécessaire d'envoyer à chaque fois le nom d'utilisateur et le mot de passe. Pour simplifier cela, nous allons passer à l'utilisation de JSON Web Tokens (JWT).
 
 Dans cette approche, un token est généré lors de l'authentification et deux beans sont utilisés :
