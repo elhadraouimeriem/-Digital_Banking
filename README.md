@@ -65,8 +65,15 @@ avec la base de données.Des tests ont été effectués pour valider le bon fonc
 # Test de la Couche DAO
 <img src="captures/view_account.PNG">
 <li>Couche Service et DTOs :</li>
-<p>On a afficher la liste des customers </p>
-<img src="captures/customers.PNG">
+
+1. afficher la liste des clients
+   <img src="captures/customers.PNG">
+2. Afficher les Comptes
+   <img src="captures/accounts.PNG">
+3. Chercher Un compte
+   <img src="captures/chercher_compte.PNG">
+4. Afficher les Opération d'un compte
+   <img src="captures/Operations.PNG">
 
 
 ## Tests et Documentation
