@@ -51,6 +51,7 @@ public class SecurityConfig {
     }
     @Bean
     //securityFilterChain:pour proteger l'application
+    //securityFilterChain:pour proteger l'application
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -58,7 +59,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(ar-> ar.requestMatchers("/auth/login/**").permitAll())
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
-               // .httpBasic(Customizer.withDefaults())
+                // .httpBasic(Customizer.withDefaults())
                 .oauth2ResourceServer(oa->oa.jwt(Customizer.withDefaults()))
                 .build();
     }
