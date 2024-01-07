@@ -97,6 +97,7 @@ Swagger a été intégré pour la documentation automatique des API REST. Cet ou
    <img src="captures/swaggerschemas.PNG">
 4. Un document json qui décrit les fonctionnalitées de notre API Restful
    <img src="captures/api-docs-1.PNG">
+
 # Postman
 Postman a été utilisé comme un outil essentiel pour tester les API exposées par l'application. Il offre une interface conviviale pour envoyer des requêtes HTTP aux endpoints spécifiés, permettant ainsi aux développeurs de tester les fonctionnalités de manière interactive. Les collections Postman peuvent être créées pour regrouper les requêtes associées à différentes fonctionnalités.
   **OpenAPI definition**
@@ -131,7 +132,9 @@ agit en tant que serveur de ressources sécurisé.
    <img src="captures/http_client_customer.PNG">
          **Consultation du profil**
   <img src="captures/http_client_profile.PNG">
+
 4. JWT
+
    Avec l'approche HTTP Basic, il est nécessaire d'envoyer à chaque fois le nom d'utilisateur et le mot de passe. Pour simplifier cela, nous allons passer à l'utilisation de JSON Web Tokens (JWT).
 
 Dans cette approche, un token est généré lors de l'authentification et deux beans sont utilisés :
