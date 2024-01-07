@@ -124,7 +124,7 @@ agit en tant que serveur de ressources sécurisé.
    <img src="captures/http_client_outil.PNG">
    À chaque fois que l'authentification de base (Basic) est utilisée, lors de l'envoi d'une requête, il est nécessaire d'inclure les informations d'identification (nom d'utilisateur et mot de passe) dans l'en-tête d'autorisation. Ces informations doivent être encodées en Base64.
         
-    **Consultation des Clients**
+**Consultation des Clients**
    <img src="captures/http_client_customer.PNG">
          **Consultation du profil**
   <img src="captures/http_client_profile.PNG">
